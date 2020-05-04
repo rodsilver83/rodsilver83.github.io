@@ -1,0 +1,321 @@
+<div id="canvas-container">
+    <canvas id="canvas-element">
+        Your browser does not support the Canvas element.
+    </canvas>
+</div>
+
+<nav class="navbar navbar-dark navbar-expand-sm">
+    <div class="d-none d-sm-block logo-rs" (click)="visibleSection=
+        SECTIONS.NONE">RS</div>
+    <span class="navbar-title">
+        Front End Engineer
+    </span>
+    <div class="d-block d-sm-none logo-rs">RS</div>
+    <div class="navbar-collapse navbar-small">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item" [class.active]="visibleSection ===
+                SECTIONS.HOME">
+                <a class="nav-link" (click)="setSection(SECTIONS.HOME)"
+                    href="#">Home</a>
+            </li>
+            <li class="nav-item" [class.active]="visibleSection ===
+                SECTIONS.SKILLS">
+                <a class="nav-link" (click)="setSection(SECTIONS.SKILLS)"
+                    href="#">Skills</a>
+            </li>
+            <li class="nav-item" [class.active]="visibleSection ===
+                SECTIONS.PORTFOLIO">
+                <a class="nav-link" (click)="setSection(SECTIONS.PORTFOLIO)"
+                    href="#">Portfolio</a>
+            </li>
+            <li class="nav-item" [class.active]="visibleSection ===
+                SECTIONS.CONTACT">
+                <a class="nav-link" (click)="setSection(SECTIONS.CONTACT)"
+                    href="#">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="main-container-flex">
+    <div class="p-4 container section-container section-container_medium"
+        [class.section-container_show]="visibleSection === SECTIONS.HOME">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <img src="assets/images/picture.jpg" class="img-fluid
+                    float-right photo-container">
+            </div>
+            <div class="col-6">
+                <h2 class="section-title section-title_image">
+                    Rodrigo<br>Soria
+                </h2>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <p class="mt-3 text-justify">
+                    Front End Engineer with a UI/UX
+                    designer in me. When I'm not freelancing,
+                    I'm playing videogames.
+                </p>
+                <p class="text-justify">
+                    I spend my free time creating new levels for my IOS game,
+                    have a various set of skills, from HTML 5 +
+                    CSS 3 + JS ES6, Angular, React
+                    mobile to Git deployment and Linux server administration
+                    to name a few.
+                </p>
+                <p class="mb-0 text-justify">
+                    I enjoy turning complex problems into simple tasks, is like
+                    solving a puzzle. I'm coding most of the
+                    time, or playing
+                    videogames, you'll find me in the gym from time to time.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="px-4 container section-container section-container_white"
+        [class.section-container_show]="visibleSection === SECTIONS.SKILLS">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <h2 class="section-title text-center mb-4">
+                    Skills
+                </h2>
+            </div>
+        </div>
+        <div class="row align-items-end bar-container text-center no-gutters">
+            <div class="col-2 px-sm-2">
+                <div class="bar bar-html5 p-1">95%</div>
+            </div>
+            <div class="col-2 px-sm-2">
+                <div class="bar bar-angular p-1">90%</div>
+            </div>
+            <div class="col-2 px-sm-2">
+                <div class="bar bar-js p-1">95%</div>
+            </div>
+            <div class="col-2 px-sm-2">
+                <div class="bar bar-css3 p-1">90%</div>
+            </div>
+            <div class="col-2 px-sm-2">
+                <div class="bar bar-mobile p-1">80%</div>
+            </div>
+            <div class="col-2 px-sm-2">
+                <div class="bar bar-jedi p-1">40%</div>
+            </div>
+        </div>
+
+        <div class="row align-items-end text-center no-gutters mt-2 mb-3">
+            <div class="col-2 px-sm-2">
+                <span class="skills-icon orange">
+                    <i class="fab fa-html5"></i>
+                </span>
+            </div>
+            <div class="col-2 px-sm-2">
+                <span class="skills-icon icon red">
+                    <i class="fab fa-angular"></i>
+                </span>
+            </div>
+            <div class="col-2 px-sm-2">
+                <span class="skills-icon icon yellow">
+                    <i class="fab fa-js"></i>
+                </span>
+            </div>
+            <div class="col-2 px-sm-2">
+                <span class="skills-icon icon blue">
+                    <i class="fab fa-css3-alt"></i>
+                </span>
+            </div>
+            <div class="col-2 px-sm-2">
+                <span class="skills-icon icon green">
+                    <i class="fas fa-mobile-alt"></i>
+                </span>
+            </div>
+            <div class="col-2 px-sm-2">
+                <span class="skills-icon icon dark-blue">
+                    <i class="fas fa-jedi"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="px-4 container section-container section-container_min-height
+        section-container_large"
+        [class.section-container_show]="visibleSection === SECTIONS.PORTFOLIO">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <h2 class="section-title text-center mb-4">
+                    Portfolio
+                </h2>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-4">
+            <div class="col-sm-3 d-none d-sm-block no-gutters">
+                <ul class="portfolio-list">
+                    <li (click)="visiblePortfolio= PORTFOLIO.AMAZEN"
+                        [class.portfolio-list__link_active]="visiblePortfolio
+                        === PORTFOLIO.AMAZEN"
+                        class="portfolio-list__link">Amazen</li>
+                    <li (click)="visiblePortfolio= PORTFOLIO.BPG"
+                        [class.portfolio-list__link_active]="visiblePortfolio
+                        === PORTFOLIO.BPG"
+                        class="portfolio-list__link">BPG</li>
+                    <li (click)="visiblePortfolio= PORTFOLIO.INTERNEWS"
+                        [class.portfolio-list__link_active]="visiblePortfolio
+                        === PORTFOLIO.INTERNEWS"
+                        class="portfolio-list__link">Internews</li>
+                    <li (click)="visiblePortfolio= PORTFOLIO.V147"
+                        [class.portfolio-list__link_active]="visiblePortfolio
+                        === PORTFOLIO.V147"
+                        class="portfolio-list__link">V147</li>
+                </ul>
+            </div>
+            <div class="col-12 col-sm-9 portfolio__container-wrapper">
+                <div [class.portfolio__container_show]="visiblePortfolio ===
+                    PORTFOLIO.AMAZEN"
+                    class="row portfolio__container justify-content-center">
+                    <div class="col-12">
+                        <h3>AMAZEN Infinity</h3>
+                        <p class="text-justify">IOS Videogame that started as a
+                            hobby and became whole new project since
+                            that Unity5 Game
+                            developing
+                            course I took.</p>
+                        <p class="text-justify">Key technologies: RestAPI, C#,
+                            Unity5, IOS, Blender</p>
+                    </div>
+                    <div class="col-12 text-center mt-2">
+                        <iframe class="amazen-frame" width="308" height="173"
+                            src="https://www.youtube.com/embed/OUYoQiL6tG4"
+                            frameborder="0"
+                            allow="autoplay; encrypted-media;" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div [class.portfolio__container_show]="visiblePortfolio ===
+                    PORTFOLIO.BPG"
+                    class="row portfolio__container justify-content-center">
+                    <div class="col-12">
+                        <h3>BPGurus</h3>
+                        <p class="text-justify">New coorporate WebPage redesign
+                            with responsive and SEO optimizations.
+                        </p>
+                        <p class="text-justify">Key technologies: Angular,
+                            Bootstrap, Apache, JQuery</p>
+                    </div>
+                    <div class="col-12 text-center mt2">
+                        <div class="bpg-frame">
+                            <img src="assets/images/portfolio/bpg_1.png"
+                                class="img-fluid bpg-image">
+                        </div>
+                    </div>
+                </div>
+
+                <div [class.portfolio__container_show]="visiblePortfolio ===
+                    PORTFOLIO.INTERNEWS"
+                    class="row portfolio__container justify-content-center">
+                    <div class="col-sm-7">
+                        <h3>Internews</h3>
+                        <p class="text-justify">
+                            IOS App to send coorporate internal news, hints
+                            tips, worked fromt the design for mobile
+                            implementatio to develop the
+                            whole front-end.
+                        </p>
+                        <p class="text-justify">
+                            Key technologies: Ionic, Cordova, PhoneGap, PHP,
+                            Angular, LAMP, CodeIgniter, Ajax
+                        </p>
+                    </div>
+                    <div class="col-sm-5 text-center mt2">
+                        <div class="internews-frame">
+                            <img src="assets/images/portfolio/knowhow_1.png"
+                                class="img-fluid internews-image">
+                        </div>
+                    </div>
+                </div>
+
+                <div [class.portfolio__container_show]="visiblePortfolio ===
+                    PORTFOLIO.V147"
+                    class="row portfolio__container justify-content-center">
+                    <div class="col-12">
+                        <h3>V147</h3>
+                        <p class="text-justify">E-commerce platform made from
+                            ground up. With a backend service using
+                            sales data analytics, to improve seasonal-sale
+                            offers, top products, and key costumers.
+                        </p>
+                        <p class="text-justify">Key technologies: Angular,
+                            Bootstrap, Nginx, CodeIgniter, JQuery, AWS,
+                            SendGrid, D3, Responsive Design</p>
+                    </div>
+                    <div class="col-12 text-center mt2">
+                        <div class="v147-frame">
+                            <img src="assets/images/portfolio/v147_1.png"
+                                class="img-fluid v147-image">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="px-4 container section-container section-container_white
+        section-container_small"
+        [class.section-container_show]="visibleSection === SECTIONS.CONTACT">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <h2 class="section-title text-center mb-4">
+                    Contact
+                </h2>
+                <ul class="contact-list">
+                    <li class="contact-list__item">
+                        <a href="https://github.com/rodsilver83"
+                            target="_blank">
+                            <span class="contact icon">
+                                <i class="fab fa-github"></i>
+                            </span>
+                            <span class="contact-link">github</span>
+                        </a>
+                    </li>
+                    <li class="contact-list__item">
+                        <a href="https://www.linkedin.com/in/soriarodrigo"
+                            target="_blank">
+                            <span class="contact icon">
+                                <i class="fab fa-linkedin"></i>
+                            </span>
+                            <span class="contact-link">linkedin</span>
+                        </a>
+                    </li>
+                    <li class="contact-list__item">
+                        <a href="https://codepen.io/Rodsilver83/"
+                            target="_blank">
+                            <span class="contact icon">
+                                <i class="fab fa-codepen"></i>
+                            </span>
+                            <span class="contact-link">codepen</span>
+                        </a>
+                    </li>
+                    <li class="contact-list__item">
+                        <a href="mailto:hello@rodrigosoria.me" target="_blank">
+                            <span class="contact icon">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                            <span class="contact-link">hello@rodrigosoria.me</span>
+                        </a>
+                    </li>
+                    <!-- li class="contact-list__item">
+                        <a href="" target="_blank">
+                            <span class="contact icon">
+                                <i class="fas fa-file-alt"></i>
+                            </span>
+                            <span class="contact-link">resume</span>
+                        </a>
+                    </li -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
